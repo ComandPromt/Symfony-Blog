@@ -1,0 +1,19 @@
+{% extends "blog/blogBase.html.twig" %}
+{% block contenido %}
+<h2>Últimas entradas</h2>
+<ul class="listaNoticias">
+{% for noticia in noticias %}
+
+<li class="bloqueNoticia">
+    <img src="imagenes/thumbnail-{{noticia.id}}.png">
+    <h3><a href="noticia.php?id={{noticia.id}}">{{noticia.entradilla}}</a></h3>
+    <p>{{noticia.cuerpo}}</p>
+    <p><a href="noticia.php?id={{noticia.id}}">Leer más</a></p>
+    <p>Publicada en: {{noticia.fecha|date("d/m/Y")}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+</li>
+
+ {% else %}
+ <li>No hay noticias</li>
+  {% endfor %}
+  </ul>
+{% endblock %}

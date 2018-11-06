@@ -1,0 +1,25 @@
+<!doctype html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>The Hack blog</title>
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="{{path('index')}}">The Hack blog</a>
+        </h1>
+    </header>
+    <div id="container">
+        <div id="main">
+            {% block contenido %}{% endblock %}
+        </div>
+    </div>
+    <footer>Copyright © {{"now"|date("Y")}}<span><a href="{{path('index')}}">The Hack Blog</a></span></footer>
+</body>
+
+</html>

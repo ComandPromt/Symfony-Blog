@@ -1,0 +1,14 @@
+{# templates/blog/listaApuestas.html.twig #}
+{% extends 'blog/blogBase.html.twig' %}
+{% block contenido %}
+ <h2>Apuestas</h2>
+ <ul>
+ {% for noticia in noticias %}
+ <li><a href="{{ path('verNoticia', {'id':
+apuesta.id}) }}">{{ noticia.cuerpo }}</a></li>
+ {% else %}
+ <li>No hay noticias</li>
+ {% endfor %}
+ </ul>
+ <p><a href="{{ path('app_noticia_lista') }}">Añadir noticia</a></p>
+{% endblock %}

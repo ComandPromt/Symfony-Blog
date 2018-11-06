@@ -1,0 +1,10 @@
+{# templates/blog/verNoticia.html.twig #}
+{% extends 'blog/blogBase.html.twig' %}
+{% block contenido %}
+<h2>{{ noticia.titular }}</h2>
+<p class="small">Publicado en: {{ noticia.fecha|date("d/m/Y")}}</p>
+<img src="../imagenes/cover-{{ noticia.id }}.png"/>
+<p>{{ noticia.cuerpo }}</p>
+<p><a href="{{ path('app_noticia_editar', {'id': noticia.id}) }}">Editar Noticia</a><br/></p>
+<a href="{{ path('app_noticia_borrar', {'id': noticia.id}) }}">Borrar Noticia</a>
+{% endblock %}
